@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ftc_app-master/TeamCode/build/generated/source/buildConfig/androidTest/androidTest.iml" filepath="$PROJECT_DIR$/ftc_app-master/TeamCode/build/generated/source/buildConfig/androidTest/androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/generated/source/r/androidTest/androidTest1.iml" filepath="$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/generated/source/r/androidTest/androidTest1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/generated/source/buildConfig/androidTest/androidTest2.iml" filepath="$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/generated/source/buildConfig/androidTest/androidTest2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftc_app-master/TeamCode/build/generated/source/buildConfig/buildConfig.iml" filepath="$PROJECT_DIR$/ftc_app-master/TeamCode/build/generated/source/buildConfig/buildConfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/generated/source/buildConfig/buildConfig1.iml" filepath="$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/generated/source/buildConfig/buildConfig1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftc_app-master/TeamCode/build/intermediates/manifests/full/debug/debug.iml" filepath="$PROJECT_DIR$/ftc_app-master/TeamCode/build/intermediates/manifests/full/debug/debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/intermediates/bundles/default/default.iml" filepath="$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/intermediates/bundles/default/default.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftc_app-master/TeamCode/src/main/main.iml" filepath="$PROJECT_DIR$/ftc_app-master/TeamCode/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftc_app-master/TeamCode/build/generated/source/r/r.iml" filepath="$PROJECT_DIR$/ftc_app-master/TeamCode/build/generated/source/r/r.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/generated/source/r/r1.iml" filepath="$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/generated/source/r/r1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/intermediates/manifests/aapt/release/release.iml" filepath="$PROJECT_DIR$/ftc_app-master/FtcRobotController/build/intermediates/manifests/aapt/release/release.iml" />
+    </modules>
+  </component>
+</project>
