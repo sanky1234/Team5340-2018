@@ -66,13 +66,7 @@ public class SwerveDriveTest extends LinearOpMode{
         vehicleTranslationx = gamepad1.right_stick_x;
         vehicleTranslationy = gamepad1.right_stick_y;
 
-        if(gamepad1.left_stick_x < -0.1){
-            vehicleRotation = -1;
-        }else if(gamepad1.left_stick_x > 0.1){
-            vehicleRotation = 1;
-        }else{
-            vehicleRotation = 0;
-        }
+        vehicleRotation = gamepad1.left_stick_x;
 
 
 
@@ -89,6 +83,32 @@ public class SwerveDriveTest extends LinearOpMode{
         double wheelThreeAngle = (((Math.atan2(A,D) * (180 / Math.PI))+ 180) / 360);
         double wheelFourSpeed = Math.sqrt((Math.pow(A,2) + Math.pow(C,2)));
         double wheelFourAngle = (((Math.atan2(A,C) * (180 / Math.PI)) + 180) / 360);
+
+        double max = 0;
+
+        if (max < wheelOneSpeed){
+            max = wheelOneSpeed;
+        }
+
+        if(max < wheelTwoSpeed){
+            max = wheelTwoSpeed;
+        }
+
+        if(max < wheelThreeSpeed){
+            max = wheelThreeSpeed;
+        }
+
+        if(max < wheelFourSpeed){
+            max = wheelFourSpeed;
+        }
+
+        if(max > 1){
+            wheelOneSpeed = wheelOneSpeed / max;
+            wheelTwoSpeed = wheelTwoSpeed / max;
+            wheelThreeSpeed = wheelThreeSpeed / max;
+            wheelFourSpeed = wheelFourSpeed / max;
+        }
+
 
         right.setPower(wheelOneSpeed);
         rightServo.setPosition(wheelOneAngle);
