@@ -31,7 +31,7 @@ public class Teleop extends CommonVariables {
 
             if(gamepad1.right_bumper){
                 leftGrabber.setPosition(CLOSE_GRABBER);
-                rightGrabber.setPosition(CLOSE_GRABBER);
+                //rightGrabber.setPosition(CLOSE_GRABBER);
                 sleep(250);
               //  leftGrabber.setPosition(.2);
               //  rightGrabber.setPosition(.2);
@@ -40,7 +40,7 @@ public class Teleop extends CommonVariables {
 
             if (gamepad1.left_bumper){
                 leftGrabber.setPosition(OPEN_GRABBER);
-                rightGrabber.setPosition(OPEN_GRABBER);
+                //rightGrabber.setPosition(OPEN_GRABBER);
                 sleep(250);
             }
 
@@ -53,7 +53,7 @@ public class Teleop extends CommonVariables {
             if(gamepad1.right_trigger != 0 && lift.getCurrentPosition() < LIFT_MAX_CLICKS) {                     //Flapper control - toggle using A
                 lift.setPower(gamepad1.right_trigger * LIFT_SLOW);
                 telemetry.addData("lift current position ", lift.getCurrentPosition());
-            }else if(gamepad1.left_trigger != 0 && lift.getCurrentPosition() >= 0){
+            }else if(gamepad1.left_trigger != 0 && lift.getCurrentPosition() >= -500){
                 lift.setPower(-gamepad1.left_trigger * LIFT_SLOW);
                 telemetry.addData("lift current position ", lift.getCurrentPosition());
             }else{

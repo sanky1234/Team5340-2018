@@ -23,18 +23,37 @@ public class firstAuto extends CommonVuforia{
 
         }
         relicTrackables.activate();
-        //closeArms();
+        closeArms();
+        sleep(200);
         liftUp(3,0.2);
+        sleep(200);
+        driveForwardWithEncoders(5,0.4);
+        sleep(200);
+        setDownBall();
+        sleep(1000);
+
+
+        if(colorSensor.red() > colorSensor.blue()) {
+
+            turnLeft(30);
+            bringUpBall();
+            turnRight(30);
+        }
+        else {
+            turnRight(30);
+            bringUpBall();
+            turnLeft(30);
+        }
+
+        sleep(1000);
+
 
         ///Add color sensor and servo movement.
         //add turn to knock ball off
         //add turn to turn back to 0
 
-        driveForwardWithEncoders(30,0.4);
+        driveForwardWithEncoders(3,0.4);
         sleep(100);
-        turnRight(90);
-        sleep(100);
-        driveForwardWithEncoders(10,0.4);
 
         while(trackableItemThatWasSensed == RelicRecoveryVuMark.UNKNOWN){
            getTrackable();
@@ -42,22 +61,49 @@ public class firstAuto extends CommonVuforia{
 
         trackableItemString = getTrackableString();
 
+        turnLeft(90);
+        driveForwardWithEncoders(10,0.5);
+        turnRight(90);
+
         if(trackableItemString.equalsIgnoreCase("Center")){
-            driveForwardWithEncoders(30,0.4);
-        }else if(trackableItemString.equalsIgnoreCase("Left")){
-            turnLeft(70);
+            driveForwardWithEncoders(10,0.4);
+            sleep(100);
+            turnRight(90);
+            sleep(100);
+            driveForwardWithEncoders(10,0.4);
+            sleep(100);
+
+        }else if(trackableItemString.equalsIgnoreCase("Right")){
+
+            driveForwardWithEncoders(5 ,0.4);
+            sleep(100);
+            turnRight(90);
+            sleep(100);
+            driveForwardWithEncoders(10,0.4);
+            sleep(100);
+
+
         }else{
-            turnRight(70);
-            turnLeft(70);
+            driveForwardWithEncoders(15,0.4);
+            sleep(100);
+            turnRight(90);
+            sleep(100);
+            driveForwardWithEncoders(10,0.4);
+            sleep(100);
         }
         // using if statement go to the right collumn
 
-        driveForwardWithEncoders(30,0.4);
+        //driveForwardWithEncoders(15,0.4);
 
+        //sleep(100);
         liftDown(3,0.2);
+        sleep(100);
         openArms();
+        sleep(100);
+        liftUp(3,0.2);
+        sleep(100);
         driveBackwardsWithEncoders(5,0.4);
+        liftDown(3,02);
     }
-
 
 }

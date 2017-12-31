@@ -1,11 +1,14 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cColorSensor;
 import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cGyro;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.GyroSensor;
 import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.ColorSensor;
+import com.qualcomm.robotcore.hardware.I2cDevice;
 
 import org.firstinspires.ftc.robotcore.external.ClassFactory;
 import org.firstinspires.ftc.robotcore.external.matrices.OpenGLMatrix;
@@ -42,11 +45,14 @@ public class CommonVariables extends LinearOpMode {
 
 
     public Servo leftGrabber;
-    public Servo rightGrabber;
+    public Servo ballServo;
 
-    final public double CLOSE_GRABBER = 0.2;
-    final public double OPEN_GRABBER = 0.75;
-    final public double INITIAL_GRABBER = 1;
+
+    final public double CLOSE_GRABBER = 1;
+    final public double OPEN_GRABBER = 0;
+    final public double INITIAL_GRABBER = 0;
+    final public double BALL_ZERO = 0.15;
+    final public double BALL_DOWN = 0.75;
 
     public boolean MotorSlowing = false;
 
@@ -56,7 +62,9 @@ public class CommonVariables extends LinearOpMode {
     /////////////////////////////// Sensors //////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////////////////
     GyroSensor Gyroscope;
+    ColorSensor colorSensor;
     ModernRoboticsI2cGyro gyro;
+    ModernRoboticsI2cColorSensor color;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////Vuforia////////////////////////////////////////////////
@@ -78,8 +86,7 @@ public class CommonVariables extends LinearOpMode {
         right = hardwareMap.dcMotor.get("right");
         lift = hardwareMap.dcMotor.get("lift");
         leftGrabber = hardwareMap.servo.get("leftGrabber");
-        rightGrabber = hardwareMap.servo.get("rightGrabber");
-        rightGrabber.setDirection(Servo.Direction.REVERSE);
+        ballServo = hardwareMap.servo.get("ballServo");
 
         left.setPower(0);
         right.setPower(0);
@@ -87,7 +94,7 @@ public class CommonVariables extends LinearOpMode {
         lift.setPower(0);
 
         leftGrabber.setPosition(INITIAL_GRABBER);
-        rightGrabber.setPosition(INITIAL_GRABBER);
+        ballServo.setPosition(BALL_ZERO);
 
 
         left.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
@@ -105,8 +112,9 @@ public class CommonVariables extends LinearOpMode {
         right = hardwareMap.dcMotor.get("right");
         lift = hardwareMap.dcMotor.get("lift");
         leftGrabber = hardwareMap.servo.get("leftGrabber");
-        rightGrabber = hardwareMap.servo.get("rightGrabber");
-        rightGrabber.setDirection(Servo.Direction.REVERSE);
+        ballServo = hardwareMap.servo.get("ballServo");
+
+        colorSensor = hardwareMap.colorSensor.get("color");
 
         left.setPower(0);
         right.setPower(0);
@@ -114,7 +122,7 @@ public class CommonVariables extends LinearOpMode {
         lift.setPower(0);
 
         leftGrabber.setPosition(INITIAL_GRABBER);
-        rightGrabber.setPosition(INITIAL_GRABBER);
+        ballServo.setPosition(BALL_ZERO);
 
 
         Gyroscope = hardwareMap.gyroSensor.get("gyro");
@@ -153,3 +161,4 @@ public class CommonVariables extends LinearOpMode {
 
     }
 }
+

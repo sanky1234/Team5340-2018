@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 
 /**
  * Created by RobotAdmin on 11/16/2017.
@@ -16,15 +17,24 @@ public class CommonActuatorClass extends CommonDriving {
         return ClicksNeeded;
     }//end Distatnce to clicks Converter
 
+
+    public void setDownBall(){
+        ballServo.setPosition(BALL_DOWN);
+        sleep(250);
+    }
+
+    public void bringUpBall(){
+        ballServo.setPosition(BALL_ZERO);
+        sleep(250);
+    }
+
     public void openArms(){
         leftGrabber.setPosition(OPEN_GRABBER);
-        rightGrabber.setPosition(OPEN_GRABBER);
         sleep(250);
     }
 
     public void closeArms(){
         leftGrabber.setPosition(CLOSE_GRABBER);
-        rightGrabber.setPosition(CLOSE_GRABBER);
         sleep(250);
     }
 
@@ -51,5 +61,7 @@ public class CommonActuatorClass extends CommonDriving {
     public void liftDown(double DistanceToTravel, double Speed) throws InterruptedException {
         liftUp(-DistanceToTravel, -Speed);
     }
+
+
 
 }
